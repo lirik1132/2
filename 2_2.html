@@ -1,0 +1,50 @@
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ходы коня</title>
+
+		<script type="text/javascript">
+		function addition(){
+	          //document.getElementById('rez').value=myArray.indexOf(a[0]);
+						var myArrayX = ['A', 'B', 'C', 'D', 'E', 'F', 'G','H'];
+						var myArrayY = ['1', '2', '3', '4', '5', '6', '7','8'];
+						var rez="";
+						var a = document.getElementById('a').value;
+	          	        //  alert(a);
+	          var kX = uppercase.myArrayX.indexOf(a[0]);
+						var kY = myArrayY.indexOf(a[1]);
+	          //  alert(k);
+	          if (kX<0 || kY < 0) {
+	            alert("неверные параметры начального положения КОНЯ!");
+	            }
+	            else {
+	              for (var x = -2; x <= 2; x++) {
+									for (var y = -2; y <= 2; y++){
+										if (x!=y && x*y!=0 && x!=-y)  {
+													if (kX+x >=0 && kX+x <=7 && kY+y >=0 && kY+y <=7  ) {
+														//alert(kX+x+"*"+kY+y);
+														rez+= " " + myArrayX[kX+x]+myArrayY[kY+y];
+													}
+											}
+
+									};
+	              //document.write(k+p+"*")``
+								};
+							//alert(rez);
+							document.getElementById('statusArea').value = rez;
+	      };
+
+	    };
+		</script>
+    	</head>
+	<body>
+    <form>
+      <label>Введите клетку</label> <br>
+	<input id="a" type="text" style="text-transform: uppercase;" value="D2"><br>
+  <input type="button" value="Сложить" onclick="addition();"><br>
+	<div id="result">
+	<textarea id="statusArea" style="width:200px;height:150px;" disabled rows="3" cols="10"></textarea>
+</div>
+</form>
+	</body>
+</html>
